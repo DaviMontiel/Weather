@@ -19,22 +19,25 @@ class DayView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Stack(
-        children: [
-          
-          ...(currentDay
-            ? _background()
-            : _background2(
-                color: _getDayStatusColor(weatherDay.weatherCode)
-              )
-            ),
-      
-          _front(),
-      
-        ],
-      )
+    return ClipRect(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Stack(
+          children: [
+            
+            ...(currentDay
+              ? _background()
+              : _background2(
+                  color: _getDayStatusColor(weatherDay.weatherCode)
+                )
+              ),
+        
+            _front(),
+        
+          ],
+        )
+      ),
     );
   }//WID
 
