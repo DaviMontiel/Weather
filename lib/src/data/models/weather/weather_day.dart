@@ -60,7 +60,7 @@ class WeatherDay {
         latitude: lat,
         weather: forecast['weather'][0]['main'],
         weatherCode: forecast['weather'][0]['id'],
-        temp: forecast['main']['temp'],
+        temp: forecast['main']['temp'].toDouble(),
         minTemp: double.parse(forecast['main']['temp_min'].toString()),
         maxTemp: double.parse(forecast['main']['temp_max'].toString()),
         locationName: name,
